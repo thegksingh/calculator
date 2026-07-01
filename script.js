@@ -44,9 +44,20 @@ digit.forEach((button) => {
 operator.forEach((button) => {
     button.addEventListener("click", (e) => {
         const clickedValue = e.target.textContent;
-        operatorChosen = clickedValue;
+        
+        if (secondNumber){
+            const result = operate(Number(firstNumber), operatorChosen, Number(secondNumber));
 
-        updateDisplay(operatorChosen);
+            firstNumber = result.toString();
+            updateDisplay(firstNumber);
+            secondNumber = "";
+
+            operatorChosen = clickedValue;
+        } else{
+            operatorChosen = clickedValue;
+            updateDisplay(operatorChosen);
+
+        } 
     })
 });
 
