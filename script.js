@@ -1,3 +1,24 @@
+const digit = document.querySelectorAll(".digit");
+
+const display = document.querySelector(".display")
+
+let firstNumber = "";
+
+
+digit.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const clickedValue = e.target.textContent;
+        firstNumber += clickedValue;
+
+        updateDisplay(firstNumber);
+    })
+});
+
+
+function updateDisplay(value){
+    display.textContent = value;
+}
+
 function add(num1, num2){
     return num1 + num2;
 }
