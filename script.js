@@ -8,12 +8,20 @@ let firstNumber = "";
 
 let operatorChosen = "";
 
+let secondNumber = "";
+
 digit.forEach((button) => {
     button.addEventListener("click", (e) => {
         const clickedValue = e.target.textContent;
-        firstNumber += clickedValue;
 
-        updateDisplay(firstNumber);
+        if (!operatorChosen){
+            firstNumber += clickedValue;
+            updateDisplay(firstNumber);
+        } else {
+            secondNumber += clickedValue;
+            updateDisplay(secondNumber);
+        }
+        
     })
 });
 
