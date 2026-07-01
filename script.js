@@ -6,11 +6,22 @@ const display = document.querySelector(".display");
 
 const equalTo = document.getElementById("equal-to");
 
+const allClear = document.getElementById("all-clear");
+
 let firstNumber = "";
 
 let operatorChosen = "";
 
 let secondNumber = "";
+
+allClear.addEventListener("click", clearDisplay)
+
+function clearDisplay(){
+    firstNumber = "";
+    operatorChosen = "";
+    secondNumber = "";
+    updateDisplay(firstNumber);
+}
 
 
 equalTo.addEventListener("click", () => {
