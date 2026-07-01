@@ -8,11 +8,26 @@ const equalTo = document.getElementById("equal-to");
 
 const allClear = document.getElementById("all-clear");
 
+const clear = document.getElementById("clear");
+
 let firstNumber = "";
 
 let operatorChosen = "";
 
 let secondNumber = "";
+
+clear.addEventListener("click", () =>{
+    if (secondNumber){
+        secondNumber = secondNumber.slice(0, secondNumber.length - 1);
+        updateDisplay(secondNumber);
+    }else if (firstNumber){
+        firstNumber = firstNumber.slice(0, firstNumber.length - 1);
+        updateDisplay(firstNumber);
+    } else if (operatorChosen){
+        operatorChosen = "";
+        updateDisplay(operatorChosen);
+    }
+})
 
 allClear.addEventListener("click", clearDisplay)
 
