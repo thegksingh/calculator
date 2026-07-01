@@ -10,11 +10,35 @@ const allClear = document.getElementById("all-clear");
 
 const clear = document.getElementById("clear");
 
+const decimal = document.getElementById("decimal")
+
 let firstNumber = "";
 
 let operatorChosen = "";
 
 let secondNumber = "";
+
+decimal.addEventListener("click", () => {
+    if (firstNumber){
+        if (!firstNumber.includes(".")){
+            firstNumber += ".";
+            updateDisplay(firstNumber);
+        }
+    }
+    if (secondNumber){
+        if (!secondNumber.includes(".")){
+            secondNumber += ".";
+            updateDisplay(secondNumber);
+        } 
+    }
+    if (!firstNumber){
+        firstNumber += "0."
+        updateDisplay(firstNumber);
+    } else if (!secondNumber){
+        secondNumber += "0."
+        updateDisplay(secondNumber);
+    }
+})
 
 clear.addEventListener("click", () =>{
     if (secondNumber){
