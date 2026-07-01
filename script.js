@@ -1,9 +1,12 @@
 const digit = document.querySelectorAll(".digit");
 
+const operator = document.querySelectorAll(".operator")
+
 const display = document.querySelector(".display")
 
 let firstNumber = "";
 
+let operatorChosen = "";
 
 digit.forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -11,6 +14,15 @@ digit.forEach((button) => {
         firstNumber += clickedValue;
 
         updateDisplay(firstNumber);
+    })
+});
+
+operator.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const clickedValue = e.target.textContent;
+        operatorChosen = clickedValue;
+
+        updateDisplay(operatorChosen);
     })
 });
 
