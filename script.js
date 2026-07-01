@@ -4,11 +4,26 @@ const operator = document.querySelectorAll(".operator");
 
 const display = document.querySelector(".display");
 
+const equalTo = document.getElementById("equal-to");
+
 let firstNumber = "";
 
 let operatorChosen = "";
 
 let secondNumber = "";
+
+
+equalTo.addEventListener("click", () => {
+    if (secondNumber){
+        const result = operate(Number(firstNumber), operatorChosen, Number(secondNumber));
+
+        firstNumber = result.toString();
+        updateDisplay(firstNumber);
+
+        operatorChosen = "";
+        secondNumber = "";
+    }
+})
 
 
 digit.forEach((button) => {
