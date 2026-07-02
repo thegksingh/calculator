@@ -58,7 +58,7 @@ a{
 
 .calculator-container{
     width: 350px;
-    height: 545px;
+    height: 560px;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.5);
 }
@@ -99,4 +99,7 @@ button {
 
 .keypad {
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
