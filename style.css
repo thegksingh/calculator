@@ -53,6 +53,11 @@ p{
     box-shadow: -10px 10px 12px #ce7a7a;
 }
 
+.github-link:hover{
+    transform: scale(1.1);
+
+}
+
 a{
     align-self: center;
     text-decoration: none;
@@ -91,6 +96,7 @@ button {
     background-color: rgba(255, 255, 255, 0.5);
     font-size: large;
     font-weight: bold;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 
@@ -105,4 +111,8 @@ button {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.keypad button:hover{
+    transform: scale(.95);
 }
