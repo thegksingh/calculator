@@ -73,47 +73,39 @@ function keyPressed(e){
         clearDisplay();
     }
     if (e.key === '.'){
-        if (firstNumber){
-            if (!firstNumber.includes(".")){
+        if (!operatorChosen) {
+            if (!firstNumber) {
+                firstNumber = "0.";
+            } else if (!firstNumber.includes(".")) {
                 firstNumber += ".";
-                updateDisplay(firstNumber);
             }
-        }
-        if (secondNumber){
-            if (!secondNumber.includes(".")){
-                secondNumber += ".";
-                updateDisplay(secondNumber);
-            } 
-        }
-        if (!firstNumber){
-            firstNumber += "0."
             updateDisplay(firstNumber);
-        } else if (!secondNumber){
-            secondNumber += "0."
+        } else {
+            if (!secondNumber) {
+                secondNumber = "0.";
+            } else if (!secondNumber.includes(".")) {
+                secondNumber += ".";
+            }
             updateDisplay(secondNumber);
         }
     }
 }
 decimal.addEventListener("click", () => {
-    if (firstNumber){
-        if (!firstNumber.includes(".")){
+    if (!operatorChosen) {
+        if (!firstNumber) {
+            firstNumber = "0.";
+        } else if (!firstNumber.includes(".")) {
             firstNumber += ".";
-            updateDisplay(firstNumber);
         }
-    }
-    if (secondNumber){
-        if (!secondNumber.includes(".")){
-            secondNumber += ".";
-            updateDisplay(secondNumber);
-        } 
-    }
-    if (!firstNumber){
-        firstNumber += "0."
         updateDisplay(firstNumber);
-    } else if (!secondNumber){
-        secondNumber += "0."
+    } else {
+        if (!secondNumber) {
+            secondNumber = "0.";
+        } else if (!secondNumber.includes(".")) {
+            secondNumber += ".";
+        }
         updateDisplay(secondNumber);
-    }
+    } 
 })
 
 clear.addEventListener("click", () =>{
